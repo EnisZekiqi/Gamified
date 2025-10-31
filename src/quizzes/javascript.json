@@ -1,0 +1,77 @@
+{
+  "response_code": 0,
+  "results": [
+    {
+      "category": "JavaScript",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "Which keyword declares a variable that cannot be reassigned?",
+      "correct_answer": "const",
+      "incorrect_answers": ["let", "var", "static"]
+    },
+    {
+      "category": "JavaScript",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "What is the result of `typeof null`?",
+      "correct_answer": "object",
+      "incorrect_answers": ["null", "undefined", "number"]
+    },
+    {
+      "category": "JavaScript",
+      "type": "multiple",
+      "difficulty": "medium",
+      "question": "Which method is used to convert a JSON string into a JavaScript object?",
+      "correct_answer": "JSON.parse()",
+      "incorrect_answers": ["JSON.stringify()", "JSON.toObject()", "JSON.convert()"]
+    },
+    {
+      "category": "JavaScript",
+      "type": "multiple",
+      "difficulty": "medium",
+      "question": "What does the 'this' keyword refer to in a regular function?",
+      "correct_answer": "The object that called the function",
+      "incorrect_answers": [
+        "The global object only",
+        "The parent scope",
+        "The function itself"
+      ]
+    },
+    {
+      "category": "JavaScript",
+      "type": "multiple",
+      "difficulty": "medium",
+      "question": "Which array method returns a new array with elements that pass a test?",
+      "correct_answer": "filter()",
+      "incorrect_answers": ["map()", "forEach()", "reduce()"]
+    },
+    {
+      "category": "JavaScript",
+      "type": "multiple",
+      "difficulty": "hard",
+      "question": "What is the output of `[1, 2, 3] + [4, 5, 6]`?",
+      "correct_answer": "1,2,34,5,6",
+      "incorrect_answers": ["[1,2,3,4,5,6]", "NaN", "Error"]
+    },
+    {
+      "category": "JavaScript",
+      "type": "multiple",
+      "difficulty": "medium",
+      "question": "Which of the following is NOT a primitive type in JavaScript?",
+      "correct_answer": "Array",
+      "incorrect_answers": ["String", "Number", "Boolean"]
+    },
+    {
+      "category": "JavaScript",
+      "type": "multiple",
+      "difficulty": "hard",
+      "question": "What is the difference between '==' and '==='?",
+      "correct_answer": "'===' checks both value and type equality",
+      "incorrect_answers": [
+        "'==' checks both value and type",
+        "'===' converts types automatically",
+        "There is no difference"
+      ]
+    }
+  ]
+}

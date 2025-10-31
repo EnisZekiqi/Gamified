@@ -1,0 +1,85 @@
+{
+  "response_code": 0,
+  "results": [
+    {
+      "category": "React",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "Which hook is used to perform side effects in a React component?",
+      "correct_answer": "useEffect",
+      "incorrect_answers": ["useState", "useMemo", "useRef"]
+    },
+    {
+      "category": "React",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "Props in React are ____.",
+      "correct_answer": "Read-only",
+      "incorrect_answers": ["Mutable", "Writable", "Optional"]
+    },
+    {
+      "category": "React",
+      "type": "multiple",
+      "difficulty": "medium",
+      "question": "What is the purpose of the useMemo hook?",
+      "correct_answer": "To memoize expensive calculations and avoid re-computation",
+      "incorrect_answers": [
+        "To fetch data from an API",
+        "To trigger side effects after render",
+        "To store previous state values"
+      ]
+    },
+    {
+      "category": "React",
+      "type": "multiple",
+      "difficulty": "medium",
+      "question": "Which of the following best describes React’s Virtual DOM?",
+      "correct_answer": "A lightweight copy of the actual DOM used for efficient UI updates",
+      "incorrect_answers": [
+        "A direct reference to the browser DOM",
+        "A debugging tool for React developers",
+        "A React-specific event handler"
+      ]
+    },
+    {
+      "category": "React",
+      "type": "multiple",
+      "difficulty": "hard",
+      "question": "In React 18, what feature allows rendering parts of the UI without blocking the main thread?",
+      "correct_answer": "Concurrent Rendering",
+      "incorrect_answers": ["Lazy Loading", "React.memo", "Suspense"]
+    },
+    {
+      "category": "React",
+      "type": "multiple",
+      "difficulty": "medium",
+      "question": "What happens if you call setState() inside useEffect() without a dependency array?",
+      "correct_answer": "It causes an infinite re-render loop",
+      "incorrect_answers": [
+        "It updates only once",
+        "It throws an error",
+        "It does nothing"
+      ]
+    },
+    {
+      "category": "React",
+      "type": "multiple",
+      "difficulty": "medium",
+      "question": "Which hook lets you access values across components without prop drilling?",
+      "correct_answer": "useContext",
+      "incorrect_answers": ["useReducer", "useMemo", "useRef"]
+    },
+    {
+      "category": "React",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "What does React.StrictMode do?",
+      "correct_answer": "Highlights potential problems in an application",
+      "incorrect_answers": [
+        "Prevents component re-rendering",
+        "Optimizes rendering speed",
+        "Runs in production only"
+      ]
+    }
+  ]
+}

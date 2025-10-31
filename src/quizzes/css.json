@@ -1,0 +1,81 @@
+{
+  "response_code": 0,
+  "results": [
+    {
+      "category": "CSS",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "Which property controls the text size?",
+      "correct_answer": "font-size",
+      "incorrect_answers": ["text-style", "font-weight", "text-size"]
+    },
+    {
+      "category": "CSS",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "What does the 'position: absolute' property do?",
+      "correct_answer": "Positions the element relative to its nearest positioned ancestor",
+      "incorrect_answers": [
+        "Positions the element relative to the viewport",
+        "Positions the element inline",
+        "Positions the element relative to the document"
+      ]
+    },
+    {
+      "category": "CSS",
+      "type": "multiple",
+      "difficulty": "medium",
+      "question": "Which of the following units is relative to the font-size of the root element?",
+      "correct_answer": "rem",
+      "incorrect_answers": ["em", "vh", "px"]
+    },
+    {
+      "category": "CSS",
+      "type": "multiple",
+      "difficulty": "medium",
+      "question": "What does the 'z-index' property control?",
+      "correct_answer": "The stacking order of elements",
+      "incorrect_answers": [
+        "The zoom level of the page",
+        "The visibility of elements",
+        "The background color"
+      ]
+    },
+    {
+      "category": "CSS",
+      "type": "multiple",
+      "difficulty": "hard",
+      "question": "What is the default value of the 'position' property?",
+      "correct_answer": "static",
+      "incorrect_answers": ["relative", "absolute", "inherit"]
+    },
+    {
+      "category": "CSS",
+      "type": "multiple",
+      "difficulty": "medium",
+      "question": "Which property is used to make text bold?",
+      "correct_answer": "font-weight",
+      "incorrect_answers": ["font-style", "text-transform", "font-family"]
+    },
+    {
+      "category": "CSS",
+      "type": "multiple",
+      "difficulty": "medium",
+      "question": "Which property would you use to create rounded corners?",
+      "correct_answer": "border-radius",
+      "incorrect_answers": ["border-style", "corner-radius", "border-shape"]
+    },
+    {
+      "category": "CSS",
+      "type": "multiple",
+      "difficulty": "hard",
+      "question": "What does 'flex: 1' mean in a flex container?",
+      "correct_answer": "The item can grow and fill available space equally with other flex items",
+      "incorrect_answers": [
+        "The item has fixed size",
+        "The item will shrink but not grow",
+        "It disables flexbox behavior"
+      ]
+    }
+  ]
+}
