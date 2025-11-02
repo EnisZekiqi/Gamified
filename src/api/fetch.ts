@@ -1,7 +1,5 @@
 import axios from 'axios';
-import reactquiz from '../quizzes/react.json'
-import jsquiz from '../quizzes/javascript.json'
-import cssquiz from '../quizzes/css.json'
+
 export async function getCategories() {
     const res = await axios('https://opentdb.com/api.php?amount=10')
     return res.data.results;
@@ -12,15 +10,15 @@ export async function getCategoryList() {
     return res.data.trivia_categories;
 }
 
-export async function newestCategory() {
-    const [reactData, jsData, cssData] = await Promise.all([
-        Promise.resolve(reactquiz),
-        Promise.resolve(jsquiz),
-        Promise.resolve(cssquiz)
-    ]);
-    return {
-        'React': reactData,
-        'JavaScript': jsData,
-        'CSS': cssData
-    };
+export async function getCategoryID(id:number) {
+    try {
+        const res = await axios(`https://opentdb.com/api.php?amount=30&category=${id}`);
+        if (res.data.response_code !== 0) {
+            throw new Error('Failed to fetch quiz questions');
+        }
+        return res.data.results;
+    } catch (error) {
+        console.error('Error fetching category:', error);
+        throw error;
+    }
 }
