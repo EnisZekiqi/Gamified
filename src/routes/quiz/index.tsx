@@ -2,11 +2,12 @@ import { createFileRoute } from '@tanstack/react-router'
 import { getCategoryList } from '@/api/fetch'
 import QuizHeader from '@/components/QuizHeader'
 import useFilter from '@/hooks/useFilter'
-import { useRouter } from '@tanstack/react-router'
+import { Link } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/quiz/')({
     loader:getCategoryList,
   component: Quiz,
+  staleTime: 1000 * 60 * 5, // 5 minutes
 })
 
 type Categories = {
@@ -16,18 +17,8 @@ type Categories = {
 }
 
 function Quiz() {
-    const router = useRouter();
     const categories = Route.useLoaderData()
 
-
-
-const handleNavigate = (catId: number) => {
-  const path = `/quiz/${catId}`
-  console.log('Navigating to:', path)
-  router.navigate({
-    to: path
-  })
-}
 
 console.log(categories);
 
@@ -69,11 +60,12 @@ console.log(categories);
     <h1 className='text-[22px] font-medium mt-8'>All Categories</h1>
     <div className="grid grid-cols-4 gap-4">
         {filteredItems.map((cat:Categories)=>(
-        <div
-              onClick={() => handleNavigate(cat.id)}
+        <Link
+          to="/quiz/$categoryId"
+          params={{ categoryId: cat.id }}
         key={cat.id} className='p-2 text-lg font-medium border border-[#E6E6E6] inset-shadow-sm inset-shadow-[#2563eb]/50 rounded-lg my-2'>
             {cat.name}
-        </div>
+        </Link>
     ))}
     </div>
    </div>
