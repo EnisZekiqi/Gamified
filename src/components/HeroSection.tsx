@@ -61,7 +61,7 @@ const HeroSection = () => {
           const newUser = {
             name,
             xp: 0, // 👈 default XP value
-            rank:'Beginner', // optional, if you want to track it too
+            rank:'Novice', // optional, if you want to track it too
             quizzesCompleted: 0, // optional, if you want to track it too
           };
 

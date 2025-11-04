@@ -52,6 +52,7 @@ function QuizDetail() {
 
     if (choose.trim() === '') {
       setAlert('Please select an answer before proceeding.')
+      setIndexValue(indexValue)
     }
 
   setTimeout(() => {
@@ -93,11 +94,11 @@ function QuizDetail() {
           dangerouslySetInnerHTML={{ __html: currentQuestion.question }}
         ></h2>
 
-        <ul className="grid grid-cols-2 gap-4 list-disc list-inside items-center justify-center w-full mt-8">
+        <ul className="grid grid-cols-2 gap-4 list-disc list-inside items-start justify-center w-full mt-8">
           {allAnswers.map((answer, ansIndex) => (
             <li
               key={ansIndex}
-              className="list-none text-lg font-base text-center text-black/70 hover:text-black transition-all duration-200"
+              className="list-none text-lg font-base text-start text-black/70 hover:text-black transition-all duration-200"
             >
               <label className="flex items-center justify-center gap-2 cursor-pointer">
                 <input

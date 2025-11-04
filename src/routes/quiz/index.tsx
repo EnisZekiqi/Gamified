@@ -3,6 +3,8 @@ import { getCategoryList } from '@/api/fetch'
 import QuizHeader from '@/components/QuizHeader'
 import useFilter from '@/hooks/useFilter'
 import { Link } from '@tanstack/react-router'
+import Newest from '@/components/Newest'
+import Congrats from '@/components/Congrats'
 
 export const Route = createFileRoute('/quiz/')({
     loader:getCategoryList,
@@ -23,11 +25,7 @@ function Quiz() {
 console.log(categories);
 
 
-    const newest = [
-        {name:'React',describe:'React is a Frontend library created by Facebook , learn more from it'}
-        ,{name:'JavaScript',describe:'A programming language that is one of the core technologies of the World Wide Web'}
-        ,{name:'CSS',describe:'A style sheet language used for describing the presentation of a document'}];
-
+   
     const { filteredItems, query,handleSearch}=useFilter<Categories>(categories || [],['name']);
     
   return <div className='h-full'>
@@ -49,13 +47,7 @@ console.log(categories);
   </div>
    </div>
    <div className="flex flex-col items-start px-8 py-8">
-     <h1 className='text-[22px] font-medium'>Newest</h1>
-    {newest.map((catName,index)=>(
-        <div key={index} className='p-2 text-lg font-medium border border-[#E6E6E6] inset-shadow-sm inset-shadow-[#2563eb]/50 rounded-lg my-2'>
-            <h3 className='text-lg'>{catName.name}</h3>
-            <p className='text-sm font-light text-black/70'>{catName.describe}</p>
-        </div>
-    ))}
+    <Newest/>
     
     <h1 className='text-[22px] font-medium mt-8'>All Categories</h1>
     <div className="grid grid-cols-4 gap-4">
@@ -69,5 +61,6 @@ console.log(categories);
     ))}
     </div>
    </div>
+   <Congrats/>
     </div>
 }

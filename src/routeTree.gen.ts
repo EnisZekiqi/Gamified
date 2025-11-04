@@ -14,6 +14,7 @@ import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as QuizIndexRouteImport } from './routes/quiz/index'
 import { Route as QuizIdRouteImport } from './routes/quiz/$id'
+import { Route as NewestIdRouteImport } from './routes/newest/$id'
 
 const UsersRoute = UsersRouteImport.update({
   id: '/users',
@@ -40,11 +41,17 @@ const QuizIdRoute = QuizIdRouteImport.update({
   path: '/quiz/$id',
   getParentRoute: () => rootRouteImport,
 } as any)
+const NewestIdRoute = NewestIdRouteImport.update({
+  id: '/newest/$id',
+  path: '/newest/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/users': typeof UsersRoute
+  '/newest/$id': typeof NewestIdRoute
   '/quiz/$id': typeof QuizIdRoute
   '/quiz': typeof QuizIndexRoute
 }
@@ -52,6 +59,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/users': typeof UsersRoute
+  '/newest/$id': typeof NewestIdRoute
   '/quiz/$id': typeof QuizIdRoute
   '/quiz': typeof QuizIndexRoute
 }
@@ -60,21 +68,30 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/users': typeof UsersRoute
+  '/newest/$id': typeof NewestIdRoute
   '/quiz/$id': typeof QuizIdRoute
   '/quiz/': typeof QuizIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/users' | '/quiz/$id' | '/quiz'
+  fullPaths: '/' | '/about' | '/users' | '/newest/$id' | '/quiz/$id' | '/quiz'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/users' | '/quiz/$id' | '/quiz'
-  id: '__root__' | '/' | '/about' | '/users' | '/quiz/$id' | '/quiz/'
+  to: '/' | '/about' | '/users' | '/newest/$id' | '/quiz/$id' | '/quiz'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/users'
+    | '/newest/$id'
+    | '/quiz/$id'
+    | '/quiz/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   UsersRoute: typeof UsersRoute
+  NewestIdRoute: typeof NewestIdRoute
   QuizIdRoute: typeof QuizIdRoute
   QuizIndexRoute: typeof QuizIndexRoute
 }
@@ -116,6 +133,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof QuizIdRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/newest/$id': {
+      id: '/newest/$id'
+      path: '/newest/$id'
+      fullPath: '/newest/$id'
+      preLoaderRoute: typeof NewestIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -123,6 +147,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   UsersRoute: UsersRoute,
+  NewestIdRoute: NewestIdRoute,
   QuizIdRoute: QuizIdRoute,
   QuizIndexRoute: QuizIndexRoute,
 }
