@@ -79,7 +79,7 @@ const HeroSection = () => {
           <section className="relative h-screen w-full overflow-hidden flex flex-col items-start bg-white justify-center md:justify-start">
             <Header/>
       {/* Video Background */}
-      <div className="empty h-[120px]"></div>
+      <div className="empty h-[200px] sm:h-[120px]"></div>
       {/* Gradient Overlay */}
 <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/50 to-black/0 z-[1]" />
 
@@ -104,24 +104,24 @@ const HeroSection = () => {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
-        className="relative z-10 text-start flex flex-col p-14 items-start justify-center  md:justify-start text-white w-full">
+        className="relative z-10 text-start flex flex-col p-7 sm:p-14 items-start justify-center  md:justify-start text-white w-full">
                     <motion.h1
                      variants={fadeInUp}
-                    className="text-balance text-[44px] sm:text-5xl md:text-[68px] font-medium text-[var(--primarytext)] z-0 leading-[43px] md:leading-none">
+                    className=" sm:text-balance text-[40px] sm:text-5xl md:text-[68px] font-medium text-[var(--primarytext)] z-0 leading-[43px] md:leading-none">
                       Learn with Gamified
                     </motion.h1>
        <div className="flex items-center justify-between w-full mt-6 pb-6 border-b border-white/30">
          <motion.p
            variants={fadeInUp}
-          className="text-balance text-white/70 text-3xl font-normal max-w-md z-0">
+          className="text-balance text-white/70 text-[18px] sm:text-[23px] md:text-3xl font-normal max-w-md z-0">
                      Where Knowledge Begins
         </motion.p>
-        <button onClick={handleGetStarted} className="explore text-white border border-white/50 rounded-full p-2.5 cursor-pointer text-sm font-medium">Start Exploring</button>
+        <button onClick={handleGetStarted} className="explore text-white border border-white/50 rounded-full p-1.5 sm:p-2.5 cursor-pointer  text-xs sm:text-sm font-medium">Start Exploring</button>
        </div>
         <motion.div
            variants={fadeInUp}
           className="flex items-end justify-end gap-4 mt-8 z-[100] w-full">
-            <p className="text-white text-md font-light w-2/6 text-end text-balance">Discovery doesn't always begin with knowing. It starts with questions.Context that guide understanding forward,that's why we are here , to improve</p>
+            <p className="text-white text-sm sm:text-md font-light w-full sm:w-3/5 md:w-2/6 text-end text-balance">Discovery doesn't always begin with knowing. It starts with questions.Context that guide understanding forward,that's why we are here , to improve</p>
                   </motion.div>
       </motion.div>
             <div className="absolute bottom-0 w-full h-32 bg-gradient-to-t from-white to-transparent z-0" />

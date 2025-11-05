@@ -4,8 +4,7 @@ import QuizHeader from '@/components/QuizHeader'
 import useFilter from '@/hooks/useFilter'
 import { Link } from '@tanstack/react-router'
 import Newest from '@/components/Newest'
-import Congrats from '@/components/Congrats'
-
+import { useState,useEffect } from 'react'
 export const Route = createFileRoute('/quiz/')({
     loader:getCategoryList,
   component: Quiz,
@@ -21,17 +20,28 @@ type Categories = {
 function Quiz() {
     const categories = Route.useLoaderData()
 
+    const [lastVisited,setLastVisited]=useState<string>('');
 
-console.log(categories);
+  const lastClicked =(id:number)=>{
+    setLastVisited(id.toString());
+    localStorage.setItem('lastVisitedQuiz',id.toString());
+  }
+useEffect(() => {
+  const storedValue = localStorage.getItem('lastVisitedQuiz') || '';
 
+  if (storedValue) {
+    setLastVisited(storedValue);
+  }
+
+}, [lastVisited])
 
    
     const { filteredItems, query,handleSearch}=useFilter<Categories>(categories || [],['name']);
     
   return <div className='h-full'>
     <QuizHeader/>
-   <div className="flex items-center justify-between w-full">
-    <div className="flex flex-col items-start gap-2 px-8 py-4 border-b border-gray-300">
+   <div className="flex flex-col sm:flex-row items-start justify-between w-full ">
+    <div className="flex flex-col items-start gap-2 px-8 py-4">
      <h1 className='text-2xl font-semibold'>Welcome to Quiz Page</h1>
      <p className='text-md font-light text-black/70'>Check every quiz from every category , available for you</p>
    </div>
@@ -50,17 +60,17 @@ console.log(categories);
     <Newest/>
     
     <h1 className='text-[22px] font-medium mt-8'>All Categories</h1>
-    <div className="grid grid-cols-4 gap-4">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
         {filteredItems.map((cat:Categories)=>(
         <Link
           to="/quiz/$categoryId"
           params={{ categoryId: cat.id }}
-        key={cat.id} className='p-2 text-lg font-medium border border-[#E6E6E6] inset-shadow-sm inset-shadow-[#2563eb]/50 rounded-lg my-2'>
+          onClick={()=>lastClicked(cat.id)}
+        key={cat.id} className='p-2 text-lg font-medium border border-[#2563eb]/50 inset-shadow-sm inset-shadow-[#2563eb]/50 rounded-lg my-2'>
             {cat.name}
         </Link>
     ))}
     </div>
    </div>
-   <Congrats/>
     </div>
 }

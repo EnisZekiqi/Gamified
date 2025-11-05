@@ -57,18 +57,19 @@ const FAQ = () => {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
-      className="flex flex-col md:flex-row items-start justify-between w-full h-full gap-10 md:gap-0 px-14 mb-10"
+      id='faq'
+      className="flex flex-col lg:flex-row items-start justify-between w-full h-full gap-10 md:gap-0 px-7 sm:px-14 mb-10"
     >
       <motion.div
         variants={itemVariants}
         className="flex flex-col items-start gap-4"
       >
         <span className="font-medium text-md text-[#2563eb]">GOT QUESTIONS?</span>
-        <h1 className="font-semibold text-3xl text-black text-start">Everything You Need to Know, All in One Place</h1>
+        <h1 className="font-semibold text-[25px] sm:text-3xl text-black text-start">Everything You Need to Know, All in One Place</h1>
       </motion.div>
       <motion.div
         variants={itemVariants}
-        className="flex flex-col items-start sm:items-end gap-2 w-full"
+        className="flex flex-col items-start sm:items-start md:items-end gap-2 w-full"
       >
         {faqs.map((faq, index) => (
           <motion.div
@@ -78,8 +79,8 @@ const FAQ = () => {
             className={`p-3 border ${showFAQ === faq.id ? 'border-[#2563eb]' : 'border-white/40'}  rounded-2xl w-full sm:w-[500px] bg-[#fff] text-black cursor-pointer shadow-sm transition-all duration-300`}
             whileHover={{ scale: 1.01 }}
           >
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-2 text-md sm:text-lg font-medium">
+            <div className="flex items-start justify-between">
+              <div className="flex items-start gap-2 text-md sm:text-lg font-medium text-start">
                 {faq.id}
               </div>
               <motion.div

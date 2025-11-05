@@ -16,6 +16,7 @@ function App() {
     
     <HeroSection/>
     <Categories/>
+     <div className="empty  h-[220px] xl:h-0"></div>
     <Features />
     <div className="empty h-[220px]"></div>
     <FAQ/>

@@ -16,7 +16,7 @@ const Newest = () => {
         <Link 
         to="/newest/$id"
         params={{ id: catName.id }}
-        key={catName.id} className='p-2 text-lg font-medium border border-[#E6E6E6] inset-shadow-sm inset-shadow-[#2563eb]/50 rounded-lg my-2'>
+        key={catName.id} className='p-2 text-lg font-medium border border-[#2563eb]/50 inset-shadow-sm inset-shadow-[#2563eb]/50 rounded-lg my-2'>
             <h3 className='text-lg'>{catName.name}</h3>
             <p className='text-sm font-light text-black/70'>{catName.describe}</p>
         </Link>

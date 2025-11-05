@@ -111,14 +111,17 @@ function RouteComponent() {
     return <div className="p-8">Loading quiz...</div>
   }
 
+  const color = alert.includes('Correct') ? 'text-green-600' : 'text-red-600';
+
+
   return  <div className="p-8 h-[70vh] overflow-y-auto flex flex-col items-center justify-between w-full">
-        <h1 className="text-2xl font-semibold mb-12 w-full text-start">
+        <h1 className="text-xl sm:text-2xl font-semibold mb-12 w-full text-start">
           Category: {currentQuestion?.category}
         </h1>
   
         <div className="mb-6 p-4 flex flex-col items-center">
           <h2
-            className="text-2xl font-medium mb-2"
+            className="text-xl sm:text-2xl font-medium mb-2"
             dangerouslySetInnerHTML={{ __html: currentQuestion?.question ?? '' }}
           ></h2>
   
@@ -126,7 +129,7 @@ function RouteComponent() {
             {allAnswers.map((answer, ansIndex) => (
               <li
                 key={ansIndex}
-                className="list-none text-lg font-base text-start text-black/70 hover:text-black transition-all duration-200"
+                className="list-none text-md sm:text-lg font-base text-start text-black/70 hover:text-black transition-all duration-200"
               >
                 <label className="flex items-center justify-center gap-2 cursor-pointer">
                   <input
@@ -141,14 +144,14 @@ function RouteComponent() {
               </li>
             ))}
           </ul>
-          {alert && <div className="mt-4 text-md font-medium">{alert}</div>}
+          {alert && <div className={`mt-4 ${color} text-md font-light text-center w-full`}>{alert}</div>}
         </div>
   
         <div className="flex items-center justify-between w-full">
           <button><Link to="/quiz">Back to other Quizes</Link></button>
           <button
             onClick={handleAnswer}
-            className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition-all duration-200"
+            className=" px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition-all duration-200"
           >
             {indexValue < (questions ? questions.length - 1 : 0) ? 'Next Question' : 'Finish Quiz'}
           </button>

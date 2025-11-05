@@ -1,4 +1,6 @@
+import { Link } from "@tanstack/react-router";
 import { useState,useEffect } from "react";
+import { CgUser } from "react-icons/cg";
 
 const QuizHeader = () => {
 
@@ -53,7 +55,8 @@ const QuizHeader = () => {
         <header className="bg-white text-black flex items-center justify-between w-full p-4 shadow-sm">
           <div className="flex items-center justify-between w-full gap-4 px-4">
   {/* Player Info */}
-  <h1 className="text-2xl font-semibold">{player}</h1>
+  <Link to="/users"><CgUser size={25}/></Link>
+  <h1 className="hidden sm:block text-lg sm:text-2xl font-semibold">{player}</h1>
   <div className="flex flex-col">
     <div className="flex items-center gap-2">
       <h2 className="font-light text-sm">Current Rank : </h2>
