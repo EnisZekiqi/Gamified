@@ -9,6 +9,7 @@ import { CgClose, CgMenuRight } from 'react-icons/cg'
 type Navbar = {
   name: string
   link?: string
+  access?: React.ReactNode
 }
 
 export default function Header() {

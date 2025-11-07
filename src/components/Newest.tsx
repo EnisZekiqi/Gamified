@@ -28,7 +28,7 @@ const Newest = () => {
       {newest.map((catName) => (
         <Link
           to="/newest/$id"
-          params={{ id: catName.id }}
+          params={{ id: String(catName.id) }}
           key={catName.id}
           className="p-2 text-lg font-medium border border-[#2563eb]/50 inset-shadow-sm inset-shadow-[#2563eb]/50 rounded-lg my-2 w-[300px] sm:w-[550px]"
         >

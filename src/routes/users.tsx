@@ -1,6 +1,6 @@
 import { Link, createFileRoute } from '@tanstack/react-router'
 import { useEffect, useState } from 'react'
-import { AnimatePresence } from 'motion/react'
+import { AnimatePresence,motion } from 'motion/react'
 import { getCategories } from '@/api/fetch'
 import useLastSeen from '@/hooks/useLastSeen'
 
@@ -106,7 +106,7 @@ function RouteComponent() {
             {lastSeen.slice(0, 5).map((cat) => (
               <Link
                 to="/quiz/$categoryId"
-                params={{ categoryId: cat.id }}
+                params={{ categoryId: String(cat.id) }}
                 key={cat.id}
               >
                 <li className="text-md font-medium text-black/80 border border-[#2563eb]/50 rounded p-2">

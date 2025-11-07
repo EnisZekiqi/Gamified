@@ -60,7 +60,7 @@ function Quiz() {
           {filteredItems.map((cat: Categories) => (
             <Link
               to="/quiz/$categoryId"
-              params={{ categoryId: cat.id }}
+              params={{ categoryId: String(cat.id) }}
               onClick={() => add(cat)}
               key={cat.id}
               className="p-2 text-lg font-medium border border-[#2563eb]/50 inset-shadow-sm hover:border-[#2563eb]/80 transition-all duration-200 inset-shadow-[#2563eb]/50 rounded-lg my-2"
