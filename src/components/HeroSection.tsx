@@ -154,7 +154,8 @@ const HeroSection = () => {
                 You need to have some identification in to start exploring the
                 resources. Please log in or sign up to continue.
               </p>
-              <input
+              <form action="" onSubmit={submitName}>
+                <input
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 type="text"
@@ -166,7 +167,7 @@ const HeroSection = () => {
               )}
               <div className="flex items-center justify-between w-full">
                 <button
-                  onClick={submitName}
+                type="submit"
                   className="bg-[#2563eb] text-white px-4 py-2 rounded-full mb-2"
                 >
                   Log In
@@ -178,6 +179,7 @@ const HeroSection = () => {
                   Close
                 </button>
               </div>
+              </form>
             </div>
           </motion.div>
         )}

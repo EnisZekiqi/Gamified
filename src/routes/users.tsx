@@ -104,7 +104,7 @@ function RouteComponent() {
           <ul className="flex flex-col gap-2 w-full">
             {lastSeen.slice(0, 5).map((cat) => (
               <Link
-                to="/quiz/$categoryId"
+                to="/quiz/$id"
                 params={{ id: String(cat.id) }}
                 key={cat.id}
               >
