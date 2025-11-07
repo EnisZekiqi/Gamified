@@ -1,4 +1,5 @@
-import { Link, createFileRoute  } from '@tanstack/react-router'
+import { Link } from '@tanstack/react-router'
+import { createFileRoute } from '@tanstack/react-router'
 import { motion } from 'motion/react'
 import { getCategoryList } from '@/api/fetch'
 import QuizHeader from '@/components/QuizHeader'
@@ -59,8 +60,8 @@ function Quiz() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
           {filteredItems.map((cat: Categories) => (
             <Link
-              to="/quiz/$categoryId"
-              params={{ categoryId: String(cat.id) }}
+              to="/quiz/$id"
+              params={{ id: String(cat.id) }}
               onClick={() => add(cat)}
               key={cat.id}
               className="p-2 text-lg font-medium border border-[#2563eb]/50 inset-shadow-sm hover:border-[#2563eb]/80 transition-all duration-200 inset-shadow-[#2563eb]/50 rounded-lg my-2"

@@ -1,5 +1,4 @@
-import { Link, createFileRoute  } from '@tanstack/react-router'
-import logo from '../logo.svg'
+import { createFileRoute  } from '@tanstack/react-router'
 import HeroSection from '@/components/HeroSection'
 import Categories from '@/components/Categories'
 import FAQ from '@/components/FAQ'

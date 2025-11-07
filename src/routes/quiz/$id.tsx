@@ -9,15 +9,6 @@ export const Route = createFileRoute('/quiz/$id')({
   loader: ({ params }) => ({ id: params.id }),
 })
 
-type QuizQuestion = {
-  category: string
-  type: string
-  difficulty: string
-  question: string
-  correct_answer: string
-  incorrect_answers: Array<string>
-}
-
 function QuizDetail() {
   const { id } = Route.useParams()
   const number = Number(id)
@@ -126,7 +117,7 @@ function QuizDetail() {
         localStorage.setItem('userData', JSON.stringify(parsedData))
       }
     } else {
-      alert('🎉 You finished the quiz!')
+      setAlert('🎉 You finished the quiz!')
     }
   }
 

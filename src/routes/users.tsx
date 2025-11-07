@@ -10,7 +10,6 @@ export const Route = createFileRoute('/users')({
 })
 
 function RouteComponent() {
-  const categories = Route.useLoaderData()
 
   const [player, setPlayer] = useState('')
   const [totalXP, setTotalXP] = useState(0)
@@ -106,7 +105,7 @@ function RouteComponent() {
             {lastSeen.slice(0, 5).map((cat) => (
               <Link
                 to="/quiz/$categoryId"
-                params={{ categoryId: String(cat.id) }}
+                params={{ id: String(cat.id) }}
                 key={cat.id}
               >
                 <li className="text-md font-medium text-black/80 border border-[#2563eb]/50 rounded p-2">

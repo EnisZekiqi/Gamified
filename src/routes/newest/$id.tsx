@@ -1,5 +1,5 @@
 import { Link, createFileRoute  } from '@tanstack/react-router'
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import reactquiz from './../../quizzes/react.json'
 import javascriptquiz from './../../quizzes/javascript.json'
 import cssquiz from './../../quizzes/css.json'
