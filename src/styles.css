@@ -1,24 +1,24 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 body {
   @apply m-0;
-  font-family: "Figtree", sans-serif;
+  font-family: 'Figtree', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-html{
+html {
   scroll-behavior: smooth;
 }
 
-.explore{
+.explore {
   background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
 }
 
-.explore:hover{
-  background-color:rgba(255, 255, 255, 0.25) ;
+.explore:hover {
+  background-color: rgba(255, 255, 255, 0.25);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   transition: all 0.5s ease;
@@ -41,7 +41,15 @@ html{
   animation: gradient 6s ease infinite;
 }
 
- .st0{fill:#C4C4C4;} 
- .st1{fill:#E5B97F;}
-  .st2{fill:#C19A6B;}
-   .st3{fill:#FFFFFF;} 
+.st0 {
+  fill: #c4c4c4;
+}
+.st1 {
+  fill: #e5b97f;
+}
+.st2 {
+  fill: #c19a6b;
+}
+.st3 {
+  fill: #ffffff;
+}

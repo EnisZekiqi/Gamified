@@ -23,7 +23,11 @@
       "difficulty": "medium",
       "question": "Which method is used to convert a JSON string into a JavaScript object?",
       "correct_answer": "JSON.parse()",
-      "incorrect_answers": ["JSON.stringify()", "JSON.toObject()", "JSON.convert()"]
+      "incorrect_answers": [
+        "JSON.stringify()",
+        "JSON.toObject()",
+        "JSON.convert()"
+      ]
     },
     {
       "category": "JavaScript",

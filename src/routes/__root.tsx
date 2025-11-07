@@ -31,7 +31,9 @@ export const Route = createRootRoute({
   notFoundComponent: () => (
     <div className="flex flex-col items-center justify-center h-screen">
       <h1 className="text-2xl font-semibold text-red-600">404 - Not Found</h1>
-      <p className="text-gray-600">The page you’re looking for doesn’t exist.</p>
+      <p className="text-gray-600">
+        The page you’re looking for doesn’t exist.
+      </p>
     </div>
   ),
 })

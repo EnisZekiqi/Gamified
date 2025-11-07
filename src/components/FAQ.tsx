@@ -1,8 +1,8 @@
-import { useState } from 'react';
-import { motion, AnimatePresence, easeOut } from 'framer-motion';
+import { useState } from 'react'
+import { AnimatePresence, motion } from 'framer-motion'
 
 const FAQ = () => {
-  const [showFAQ, setShowFAQ] = useState('');
+  const [showFAQ, setShowFAQ] = useState('')
 
   const faqs = [
     {
@@ -30,7 +30,7 @@ const FAQ = () => {
       description:
         'Not yet — but we’re planning to add a favorites feature soon so you can bookmark the anime you love and access them anytime.',
     },
-  ];
+  ]
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -40,7 +40,7 @@ const FAQ = () => {
         staggerChildren: 0.2,
       },
     },
-  };
+  }
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -49,7 +49,7 @@ const FAQ = () => {
       y: 0,
       transition: { duration: 0.5 },
     },
-  };
+  }
 
   return (
     <motion.div
@@ -57,15 +57,19 @@ const FAQ = () => {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
-      id='faq'
+      id="faq"
       className="flex flex-col lg:flex-row items-start justify-between w-full h-full gap-10 md:gap-0 px-7 sm:px-14 mb-10"
     >
       <motion.div
         variants={itemVariants}
         className="flex flex-col items-start gap-4"
       >
-        <span className="font-medium text-md text-[#2563eb]">GOT QUESTIONS?</span>
-        <h1 className="font-semibold text-[25px] sm:text-3xl text-black text-start">Everything You Need to Know, All in One Place</h1>
+        <span className="font-medium text-md text-[#2563eb]">
+          GOT QUESTIONS?
+        </span>
+        <h1 className="font-semibold text-[25px] sm:text-3xl text-black text-start">
+          Everything You Need to Know, All in One Place
+        </h1>
       </motion.div>
       <motion.div
         variants={itemVariants}
@@ -107,7 +111,7 @@ const FAQ = () => {
         ))}
       </motion.div>
     </motion.div>
-  );
-};
+  )
+}
 
-export default FAQ;
+export default FAQ
